@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    @apply min-h-screen bg-slate-50 font-sans text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.07), transparent 34rem),
+      radial-gradient(circle, rgba(100, 116, 139, 0.22) 1px, transparent 1.2px);
+    background-size: auto, 24px 24px;
+    background-position: 0 0, 0 0;
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(129, 140, 248, 0.12), transparent 34rem),
+      radial-gradient(circle, rgba(71, 85, 105, 0.42) 1px, transparent 1.2px);
+    background-size: auto, 24px 24px;
+    background-position: 0 0, 0 0;
+  }
+
+  ::selection {
+    @apply bg-indigo-500/20 text-indigo-950 dark:text-indigo-100;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+}
