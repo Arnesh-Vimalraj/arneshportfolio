@@ -6,7 +6,7 @@ import { Projects } from "./sections/Projects";
 import { Hackathons } from "./sections/Hackathons";
 import { ClosingCta } from "./sections/ClosingCta";
 
-function App() {
+export default function App() {
   return (
     <>
       <Layout>
@@ -20,5 +20,3 @@ function App() {
     </>
   );
 }
-
-export default App;
